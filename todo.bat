@@ -1,2 +1,2 @@
 @ECHO OFF
-"C:\Users\SparkySmith\AppData\Local\Programs\Python\Python39\python.exe" "C:\Users\SparkySmith\projectCli\todo.py" "%1" "%~2"
+"path to python.exe in your pc\python.exe" "path to todo.py in your pc\todo.py" "%1" "%~2"
