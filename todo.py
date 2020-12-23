@@ -11,7 +11,11 @@ def main(name,values):
     is_skipped = False
     number_of_lines = 0
 
-    f = open(r'C:/Users/SparkySmith/projectCli/todo.txt','r')
+    file_name = 'path to todo.txt/todo.txt'
+    dummy_file = file_name + '.bak'
+    done_file = 'path to done.txt/done.txt'
+
+    f = open(file_name,'r')
     content = f.read()
     coList = content.split("\n")
 
@@ -41,8 +45,6 @@ $ ./todo report           # Statistics
         click.echo(f"Added todo: \"{values}\"")
         values = f'[{number}] ' + values
         
-        file_name = 'C:/Users/SparkySmith/projectCli/todo.txt'
-        dummy_file = file_name + '.bak'
         
         with open(file_name,'r')as f, open(dummy_file,'w') as df:
             # deleting the first \n for not creating an extra line
@@ -67,7 +69,7 @@ $ ./todo report           # Statistics
       
 
     if name == 'ls':
-        file_name = 'C:/Users/SparkySmith/projectCli/todo.txt'
+        
         file_size = os.path.getsize(file_name)
         if file_size == 0:
             click.echo('The List is Empty!')
@@ -81,9 +83,7 @@ $ ./todo report           # Statistics
     #if the method is del or done
     if name == 'done' or name == 'del':
     
-        file_name = 'C:/Users/SparkySmith/projectCli/todo.txt'
-        dummy_file = file_name + '.bak'
-        done_file = 'C:/Users/SparkySmith/projectCli/done.txt'
+       
 
         #getting the number of lines in the file
         with open(file_name,'r') as f:
@@ -171,8 +171,6 @@ $ ./todo report           # Statistics
         lines_in_todo = 0
         lines_in_done = 0
 
-        todo_file = 'C:/Users/SparkySmith/projectCli/todo.txt'
-        done_file = 'C:/Users/SparkySmith/projectCli/done.txt'
 
         with open(todo_file, 'r') as tf, open(done_file, 'r') as df:
             for line in tf.readlines():
